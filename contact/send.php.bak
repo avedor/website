@@ -1,0 +1,40 @@
+Thanks for your message!
+
+<?php
+
+	$userName    = $_POST['myName'];
+	$userEmail   = $_POST['myEmail'];
+	$userMessage = $_POST['myMessage'];
+
+	$to = "avery@averydorgan.com";
+	$subject = "Form Response - averydorgan.com";
+	$body = "Information Submitted:";
+
+	$body .= "\r\n Name: " . $userName;
+	$body .= "\r\n Email: " . $userEmail;
+	$body .= "\r\n Message: " . $userMessage;
+
+	$headers = 	'From: Avery Dorgan <avery@averydorgan.com>' . "\r\n" .
+  			'Reply-To: avery@averydorgan.com' . "\r\n" .
+    			'X-Mailer: PHP/' . phpversion();
+
+	mail($to, $subject, $body);
+
+
+#	SECRET_KEY = "0xca782e73e50ABC4035b6Af9A4FCdFc3fcfE99868"
+#	VERIFY_URL = "https://hcaptcha.com/siteverify"
+
+	# Retrieve token from post data with key 'h-captcha-response'.
+#	token = request.POST_DATA['h-captcha-response']
+
+	# Build payload with secret key and token.
+#	data = { 'secret': SECRET_KEY, 'response': token }
+
+	# Make POST request with data payload to hCaptcha API endpoint.
+#	response = http.post(url=VERIFY_URL, data=data)
+
+	# Parse JSON from response. Check for success or error codes.
+#	response_json = JSON.parse(response.content)
+#	success = response_json['success']
+
+?>
