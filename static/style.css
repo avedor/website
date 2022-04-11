@@ -123,7 +123,7 @@ main h1, main aside {
 }
 @media (min-width: 1024px) {
   main .sidebar {
-    grid-row: 3 / 9;
+    grid-row: 1/5;
     grid-column: 5 / 6;
   }
 }
