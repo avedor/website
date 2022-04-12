@@ -1,4 +1,5 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect
+from helpers import send_mail
 
 # Configure application
 app = Flask(__name__)
@@ -14,9 +15,21 @@ def index():
 def about():
     return render_template("about.html")
 
-@app.route("/contact")
+@app.route("/contact", methods=["GET","POST"])
 def contact():
-    return render_template("contact.html")
+    if request.method == "POST":
+        if not request.form.get("name"):
+            return None
+        elif not request.form.get("email"):
+            return None
+        elif not request.form.get("message"):
+            return None
+        sender = request.form.get("email")
+        message = request.form.get("message")
+        send_mail(sender, message)
+        return redirect("/")
+    else:
+        return render_template("contact.html")
 
 @app.route("/projects")
 def projects():

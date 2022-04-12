@@ -5,27 +5,30 @@
 {% endblock %}
 
 {% block main %}
+<form class="contact-form about_body" id="contact-form" action="/contact" method="POST">
 	<div>
-		<h2>Coming soon!</h2>
+		<label>Your Name:</label>
+		<input autocomplete="off" autofocus type="text" id="sender_name" name="name"></label>
 	</div>
-<!--	<form class="contact-form" action="send.php" method="POST">
-		<div>
-			<label>Your Name:</label>
-			<input type="text" name="myName"></label>
-		</div>
-		<div>
-			<label>Your Email:</label>
-			<input type="text" name="myEmail" />
-		</div>
-		<div>
-			<label>Message:</label>
-			<textarea cols="40" rows="5" name="myMessage"></textarea>
-		</div>
-		<div class="h-captcha" data-sitekey="cb2eb29b-f1e3-42ff-a74b-e6e9a0f277e7">
-		</div>
-		<div>
-                       <input type="submit" value="Submit" />
-		</div>
-	</form>
--->	
+	<div>
+		<label>Your Email:</label>
+		<input type="text" id="sender_email" name="email" />
+	</div>
+	<div>
+		<label>Message:</label>
+		<textarea cols="40" rows="5" id="message" name="message"></textarea>
+	</div>
+	<button class="h-captcha" data-sitekey="56ff976e-17f3-4531-a3d5-f8583c984237" data-callback="onSubmit">
+		Submit
+	</button>
+</form>
+<div class="about_body">
+	<p>This site is protected by hCaptcha and its <a href="https://hcaptcha.com/privacy">Privacy Policy</a> and <a href="https://hcaptcha.com/terms">Terms of Service</a> apply.</p>
+</div>
+
+<script type="text/javascript">
+	function onSubmit(token) {
+	  document.getElementById("contact-form").submit();
+	}
+</script>
 {% endblock %}
