@@ -107,7 +107,7 @@ def login():
 @login_required
 def handle_login():
     # will change to something internal after grading
-    return redirect("http://cs50.averydorgan.com", code=302)
+    return redirect("http://cs50.averydorgan.local", code=302)
 
 
 @app.route("/logout")
