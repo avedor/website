@@ -4,7 +4,7 @@ import re
 from cs50 import SQL
 from flask import Flask, render_template, request, redirect, session
 from flask_session import Session
-from werkzeug import check_password_hash, generate_password_hash
+from werkzeug.security import check_password_hash, generate_password_hash
 from helpers import send_mail, login_required, apology, has_numbers, has_caps
 
 
@@ -23,7 +23,7 @@ Session(app)
 ### After submission, change to a production ready db - likely postgres ###
 ###########################################################################
 # Configure CS50 Library to use SQLite database
-db = SQL("sqlite:///users.db")
+db = SQL("sqlite:////app/database/users.db")
 # Create the users table if it doesn't already exist
 db.execute("CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, username TEXT NOT NULL, hash TEXT NOT NULL)")
 

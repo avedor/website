@@ -2,3 +2,4 @@ Flask
 flask-session
 cs50
 werkzeug
+requests
