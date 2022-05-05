@@ -1,6 +1,14 @@
+import re
+
 import requests
 from functools import wraps
-from flask import render_template
+from flask import render_template, session
+
+def has_numbers(inputString):
+    return bool(re.search(r'\d', inputString))
+
+def has_caps(inputString):
+    return bool(re.search(r'[A-Z]', inputString))
 
 def login_required(f):
     """
@@ -29,17 +37,21 @@ def apology(message, code=400):
         return s
     return render_template("apology.html", top=code, bottom=escape(message)), code
 
+#########################################################
+### Change api key after grading - and switch to .env ###
+#########################################################
 # Declare mail
 mailgun_api_key="b6f1ad22f463ca74532d5b7c3845edc0-fb87af35-243cba96"
 mailgun_url="https://api.mailgun.net/v3/mail.averydorgan.com/messages"
 
-def send_mail(sender, message):
+# Enable sending of emails
+def send_mail(sender_name, sender_email, message):
     requests.post(mailgun_url,
         auth=("api", mailgun_api_key),
         data={
-             "from": sender,
+             "from": "{}".format(sender_email),
              "to": "avery@averydorgan.com",
              "subject": "Contact Form Submission",
-             "text": message
+             "text": "{}:\n\n{}".format(sender_name, message)
             }
         )
