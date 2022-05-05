@@ -1,5 +1,8 @@
-* add user to database for cs50 teaching staff
-* create pretty url in nginx for heimdall docker container
-* fix contact form so as to not get slammed with spam
-* make sure api keys are removed
 * prettify as time allows
+
+* add user to database for cs50 teaching staff
+  - added registration page at unlinked url
+* make sure api keys are removed
+  - will do after grading
+* fix contact form so as to not get slammed with spam
+  - Done?
