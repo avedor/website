@@ -23,7 +23,7 @@ Session(app)
 ### After submission, change to a production ready db - likely postgres ###
 ###########################################################################
 # Configure CS50 Library to use SQLite database
-db = SQL("sqlite:////app/database/users.db")
+db = SQL("sqlite:///database/users.db")
 # Create the users table if it doesn't already exist
 db.execute("CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, username TEXT NOT NULL, hash TEXT NOT NULL)")
 
