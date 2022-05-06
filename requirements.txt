@@ -3,4 +3,7 @@ flask-session
 cs50
 werkzeug
 requests
+<<<<<<< HEAD
 python-dotenv
+=======
+>>>>>>> aa9df2df2f58b5f3dae5518eee9736fb214c4185
