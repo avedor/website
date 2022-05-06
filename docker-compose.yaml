@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  website:
+    image: localhost:5000/website
+    ports:
+      - "8080:5000"
+    volumes:
+      - /opt/docker/website/database/users.db:/app/database/users.db
+      - /opt/docker/website/etc-hosts:/etc/hosts
+
