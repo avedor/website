@@ -1,4 +1,5 @@
 import re
+import os
 
 import requests
 from functools import wraps
@@ -42,6 +43,7 @@ def apology(message, code=400):
 #########################################################
 # Declare mail
 mailgun_api_key="b6f1ad22f463ca74532d5b7c3845edc0-fb87af35-243cba96"
+mailgun_api_key= os.environ.get("MAILGUN_API_KEY")
 mailgun_url="https://api.mailgun.net/v3/mail.averydorgan.com/messages"
 
 # Enable sending of emails

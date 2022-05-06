@@ -3,3 +3,4 @@ flask-session
 cs50
 werkzeug
 requests
+python-dotenv
