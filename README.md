@@ -4,6 +4,7 @@ This repo contains the parts needed to build a docker container hosting my perso
 
 For the course, it has been built, registered to a local registry and deployed to a local machine in my home network.
 
+[A video describing the project](https://youtu.be/dWMxQ5brlRw) can be found on YouTube.
 
 ## Database
 
