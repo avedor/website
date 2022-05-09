@@ -1,0 +1,7 @@
+venv
+__pycache__
+flask_session/*
+<<<<<<< HEAD
+.env
+=======
+>>>>>>> aa9df2df2f58b5f3dae5518eee9736fb214c4185

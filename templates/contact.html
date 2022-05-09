@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Contact
+{% endblock %}
+
+{% block main %}
+<form class="contact-form about_body" id="contact-form" action="/contact" method="POST">
+	<div>
+		<label>Your Name:</label>
+		<input autocomplete="off" autofocus type="text" id="sender_name" name="name">
+	</div>
+	<div>
+		<label>Your Email:</label>
+		<input type="text" id="sender_email" name="email" />
+	</div>
+	<div>
+		<label>Message:</label>
+		<textarea cols="40" rows="5" id="message" name="message"></textarea>
+	</div>
+	<button class="h-captcha" data-sitekey="56ff976e-17f3-4531-a3d5-f8583c984237" data-callback="onSubmit">
+		Submit
+	</button>
+</form>
+<div class="about_body">
+	<p>This site is protected by hCaptcha and its <a href="https://hcaptcha.com/privacy">Privacy Policy</a> and <a href="https://hcaptcha.com/terms">Terms of Service</a> apply.</p>
+</div>
+
+<script type="text/javascript">
+	function onSubmit() {
+	  document.getElementById("contact-form").submit();
+	}
+</script>
+{% endblock %}
